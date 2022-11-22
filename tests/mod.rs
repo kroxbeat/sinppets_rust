@@ -1,1 +1,1 @@
-mod Interior_mutability;
+mod interior_mutability;

@@ -10,15 +10,15 @@ struct Computer {
 
 #[test]
 fn main() {
-    let com1 = Computer {
+    let com1 = Computer { // mut 변수가 아님 그럼에도 값을 바꿀수 있음
         cpu_name: "i5".into(),
         //owner: Cell::new(String::from("keroro")),
         ram_size: Cell::new(4),
         is_work: Cell::new(false),
     };
 
-    println!("{com1:?}");
-    com1.is_work.set(true);
-    com1.ram_size.set(8);
-    println!("{com1:?}");
+    println!("{com1:?} {}",com1.cpu_name);
+    com1.is_work.set(true); //Cell::set() 메소드 를 사용하여 값을 바꾼다
+    com1.ram_size.set(8); //Cell::set() 메소드 를 사용하여 값을 바꾼다
+    println!("{com1:?} {}",com1.cpu_name);
 }
