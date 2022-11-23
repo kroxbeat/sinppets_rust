@@ -19,7 +19,10 @@ fn main() {
     // 가변 빌림 시도
     let _owner_0 = com1.name.try_borrow_mut();
     println!("{:?} p 2",_owner_0);
-    *_owner_0.unwrap() = "abcc".into(); // 이후 자동 drop 으로 다시 빌림 가능 해짐
+    *_owner_0.unwrap() = "abcc".into(); // unwrap 이후 drop 으로 다시 빌림 가능 해짐
+    println!("{com1:?} p 1.5");
+
+    com1.name.replace("ppppp".into()); //replace 이용시 자동Drop 됨
 
     // 가변 빌림 시도 1
     let _price_0 = com1.price.try_borrow_mut();
